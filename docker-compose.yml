@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: "sql"
+      POSTGRES_USER: "obrol"
+      POSTGRES_PASSWORD: "1234"
+    volumes:
+      - ./SQL_beginner._Day05-0/materials/:/docker-entrypoint-initdb.d
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
